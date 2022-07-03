@@ -1,4 +1,4 @@
-//from online tutorial(wds)
+//TODO: UUID not quite working, but it's installed
 const express = require('express');
 const fs = require('fs');
 const notes = require('./db/db.json');
@@ -9,18 +9,17 @@ const path = require('path');
 const app = express();
 var PORT = process.env.PORT || 4023;
 
-//middleware
+//express stuff
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-//setting routes for APIs
-//this gets notes saved and joins it in db.json
+//API route
 app.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/db/db.json'))
 });
 
-//post function to add new notes to db.json
+//adding new notes
 app.post('/api/notes', (req, res) => {
     const notes = JSON.parse(fs.readFileSync('./db/db.json'));
     const newNotes = req.body;
@@ -30,18 +29,16 @@ app.post('/api/notes', (req, res) => {
     res.json(notes);
 });
 
-//HTML calls
-//calls home page
+//HTML routes
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-//call for notes.html
 app.get('/notes', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-//start listen
+//TODO: need to fix this, not quite right
 app.listen(PORT, function() {
     console.log('App listening on PORT: ${PORT}');
 });
