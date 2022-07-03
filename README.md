@@ -3,10 +3,10 @@
   ## Description
   This application allows you to enter and save notes. 
 
-![Note Taker 1](./assets/images/screenshot1.png)
-![Note Taker 2](./assets/images/screenshot2.png)
+![Note Taker 1](./public/assets/images/screenshot1.png)
+![Note Taker 2](./public/assets/images/screenshot2.png)
 
-[This link](https://cammeer.github.io/team-profile-generator/) will take you to my version of the deployed site via Heroku.
+[This link](https://protected-sierra-72070.herokuapp.com/) will take you to the deployed site via Heroku.
  
   ## Table of Contents
   * [Installation](#installation)
