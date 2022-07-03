@@ -7,7 +7,7 @@ const path = require('path');
 
 
 const app = express();
-var PORT = process.env.PORT || 4023;
+var PORT = process.env.PORT || 3001;
 
 //express stuff
 app.use(express.urlencoded({ extended: true }));
